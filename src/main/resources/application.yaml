@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: auth-api
+  datasource:
+    url: jdbc:h2:mem:authdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  h2:
+    console:
+      enabled: true
+security:
+  jwt:
+    secret-key: ${SECURITY_JWT_SECRET_KEY:feliperyanarthurvitordiogo_senhamuitoforte123}
+    # 1 hora em milissegundos
+    expiration-time: 3600000
+
+logging:
+  level:
+    org.springframework.security: INFO
+server:
+  port: 8081
